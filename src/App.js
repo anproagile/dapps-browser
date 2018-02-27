@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,14 +7,11 @@ import {
 } from 'react-router-dom'
 import {
   Col
-} from 'reactstrap'
-import logo from './logo_solid_square_blue.svg'
-import './App.css'
+} from 'reactstrap';
+import logo from './logo_solid_square_blue.svg';
+import './App.css';
 
-import DApps from './components/DApps'
-import MarketsList from './components/MarketsList'
-import SandBox from './components/Sandbox'
-
+import DApps from './components/DApps.js';
 
 class ModalSwitch extends React.Component {
   previousLocation = this.props.location
@@ -42,11 +39,9 @@ class ModalSwitch extends React.Component {
         <Switch location={isModal ? this.previousLocation : location}>
           <Route exact path='/' component={Home}/>
           <Route path='/browser' component={Browser}/>
-          <Route path='/listings' component={Listings}/>
-          <Route path='/sandbox' component={SystemChecks}/>
         </Switch>
       </div>
-    )
+    );
   }
 }
 
@@ -67,31 +62,20 @@ const Home = () => (
       </header>
     </div>
   </div>
-)
+);
 
 const Browser = () => (
   <div>
-    <h1 className="title"><a href="/">DApps Browser</a></h1>
+    <h3 className="title"><a href="/">DApps Browser</a></h3>
       <DApps>
       </DApps>
   </div>
-)
-
-const Listings = () => (
-  <div>
-    <MarketsList>
-    </MarketsList>
-  </div>
-)
-
-const SystemChecks = () => (
-  <div><SandBox /></div>
-)
+);
 
 const App = () => (
   <Router>
     <Route component={ModalSwitch} />
   </Router>
-)
+);
 
-export default App
+export default App;

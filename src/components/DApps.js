@@ -8,6 +8,20 @@ import DAppItem from "./DAppItem"
 
 export const marketsList = [
     {
+        "name": "Etheremon",
+        "url": "https://www.etheremon.com/",
+        "description": "Digital world of monsters.",
+        "image": "/assets/etheremon.png",
+        "category": "games"
+    },
+    {
+        "name": "CryptoFighters",
+        "url": "https://cryptofighters.io/",
+        "description": "Digital fighters on the blockchain.",
+        "image": "/assets/cryptoFighters.png",
+        "category": "games"
+    },
+    {
         "name": "Etherbay",
         "url": "https://www.etherbay.com/",
         "description": "Buy & Sell Crypto Assets",
@@ -58,7 +72,7 @@ export const marketsList = [
     },
     {
         "name": "Kyber Network",
-        "url": "https://kyber.network",
+        "url": "https://web3.kyber.network",
         "description": "Decentralized exchange for ERC20 tokens",
         "image": "/assets/kyber.png",
         "category": "exchanges"
@@ -77,20 +91,7 @@ export const marketsList = [
         "image": "/assets/ercdex.png",
         "category": "exchanges"
     },
-    {
-        "name": "CryptoFighters",
-        "url": "https://cryptofighters.io/",
-        "description": "Digital fighters on the blockchain.",
-        "image": "/assets/cryptoFighters.png",
-        "category": "games"
-    },
-    {
-        "name": "Etheremon",
-        "url": "https://www.etheremon.com/",
-        "description": "Digital world of monsters.",
-        "image": "/assets/etheremon.png",
-        "category": "games"
-    },
+    
     // {
     //     "name": "EtherBots",
     //     "url": "https://etherbots.io",

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { osName } from 'react-device-detect';
+import { osName, isIOS } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import getWeb3 from '../utils/provider';
+import DAppsDisabled from './DAppsDisabled';
 
 class DApps extends React.Component {
   constructor(props) {
@@ -18,13 +19,20 @@ class DApps extends React.Component {
     this.fetch();
   }
 
-  async fetch() {
-    const network = parseInt(await getWeb3().version.network, 10);
-    const dappsList = await this.trustClient.fetchBootstrap(network, osName)
-    this.setState({ data: dappsList.data.docs });
+  fetch() {
+    const network = parseInt(getWeb3().version.network, 10);
+    this.trustClient.fetchBootstrap(network, osName).then((response) => {
+      this.setState({ data: response.data.docs });
+    });
   }
 
   render() {
+    if (isIOS) {
+      return (
+        <DAppsDisabled />
+      )
+    }
+
     const elements = this.state.data || [];
     const categoryID = '5abcceb4682db901241a0636';
     const newDApp = elements.filter((item) => {

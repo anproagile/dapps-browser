@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { osName, isIOS } from 'react-device-detect';
+import { osName } from 'react-device-detect';
 import '../App.css';
 import DAppItems from './DAppItems';
 import DAppTopCards from './DAppTopCards';
 import { TrustClient } from '../network/TrustClient';
 import getWeb3 from '../utils/provider';
-import DAppsDisabled from './DAppsDisabled';
 
 class DApps extends React.Component {
   constructor(props) {
@@ -27,12 +26,6 @@ class DApps extends React.Component {
   }
 
   render() {
-    if (isIOS) {
-      return (
-        <DAppsDisabled />
-      )
-    }
-
     const elements = this.state.data || [];
     const categoryID = '5abcceb4682db901241a0636';
     const newDApp = elements.filter((item) => {

@@ -8,9 +8,7 @@ let provider,
 export function getProvider() {
   if (!provider) {
     if (context.web3 === undefined) {
-      // throw Error('this application needs to run in a DApp browser');
-      console.log({provider})
-      provider = undefined
+      throw Error('this application needs to run in a DApp browser');
     } else {
       provider = context.web3.currentProvider;
     }
